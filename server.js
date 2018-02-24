@@ -31,7 +31,7 @@ app.get('/test-db', function(req,res){
       if(err)
          return res.status(500).send(err.toString());
       else
-         return res.send(JSON.stringify(result));
+         return res.send(JSON.stringify(result.rows));
   });
 });
 
