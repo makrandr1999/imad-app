@@ -38,9 +38,9 @@ app.get('/articles/:articleName', function(req,res){
           }
           else
              {
-            var articleData=result.rows[0];
-            req.send(createTemplate(articleData));
-              }
+                var articleData=result.rows[0];
+                req.send(createTemplate(articleData));
+             }
       
               
           }
