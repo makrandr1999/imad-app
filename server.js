@@ -80,7 +80,7 @@ app.get('/create-user',function(req,res){
       else
          return res.send("User successfully created "+username);
   });
-   //});
+  // });
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
