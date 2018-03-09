@@ -17,7 +17,7 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-//function createTemplate(data){
+/*function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
@@ -35,7 +35,7 @@ var htmlTemplate = '<html>
 </body>
 </html>'
     return htmlTemplate;
-}
+}*/
 app.get('/articles/:articleName', function(req,res){
   // var articleName=;
    //var articleData=
