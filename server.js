@@ -70,7 +70,7 @@ app.get('/articles/:articleName', function(req,res){
    
 });
 app.get('/create-user',function(req,res){
-   var username= req.body.username;
+   var username=req.body.username;
    var password=req.body.password;
    var salt= crypto.randomBytes(128).toString('hex');
    var dBString = hash(password,salt);
@@ -78,7 +78,7 @@ app.get('/create-user',function(req,res){
             if(err)
          return res.status(500).send(err.toString());
       else
-         return res.send("User successfully created "+username);
+         return res.send('User successfully created '+username);
   });
   // });
 });
