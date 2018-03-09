@@ -38,7 +38,7 @@ var htmlTemplate = '<html>
     return htmlTemplate;
 }*/
 function hash(input,salt){
-    hashed=crypto.pbkdf2SYNc(input,salt,10000,512,'sha512');
+    hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
     return hashed.toString('hex');
 }
 app.get('/hash/:input', function(req,res){
