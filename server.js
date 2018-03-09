@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 
 var config={
     
@@ -36,6 +37,14 @@ var htmlTemplate = '<html>
 </html>'
     return htmlTemplate;
 }*/
+function hash(input,salt){
+    hashed=crypto.pbkdf2SYNc(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
+app.get('/hash/:input', function(req,res){
+   var hashedString=hash(req.params.input,'This-is-a-random-string');
+   res.send(hashedString);
+});
 app.get('/articles/:articleName', function(req,res){
   // var articleName=;
    //var articleData=
