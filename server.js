@@ -58,7 +58,7 @@ app.get('/create-user',function(req,res){
    var dBString = hash(password,salt);
    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,dBString],function(err,res){
             if(err){
-          return res.status(500).send(err.toString());
+                res.status(500).send(err.toString());
             }
       else {
          return res.send('User successfully created '+username);
