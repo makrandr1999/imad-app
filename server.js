@@ -57,10 +57,12 @@ app.get('/create-user',function(req,res){
    var salt= crypto.randomBytes(128).toString('hex');
    var dBString = hash(password,salt);
    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,dBString],function(err,res){
-            if(err)
-         return res.status(500).send(err.toString());
-      else
+            if(err){
+          return res.status(500).send(err.toString());
+            }
+      else {
          return res.send('User successfully created '+username);
+      }
   });
   // });
 });
