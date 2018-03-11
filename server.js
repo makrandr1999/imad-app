@@ -72,7 +72,7 @@ app.post('/login',function(req,res){
             }
           else{
               if(result.rows.length === 0)
-                res.send(403).send('username/password incorrect');
+                res.status(403).send('username/password incorrect');
               else{
                   var dBstring= result.rows.password[0];
                   var salt=dbString.split('$')[2];
@@ -81,7 +81,7 @@ app.post('/login',function(req,res){
                       res.send('credentials correct');
                    }
                    else{
-                      res.send(403).send('username/password incorrect');
+                      res.status(403).send('username/password incorrect');
                    }
 
               }
